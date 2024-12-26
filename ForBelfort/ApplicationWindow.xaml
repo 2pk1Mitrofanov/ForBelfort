@@ -13,15 +13,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Имя сотрудника -->
         <Label Grid.Row="0" Grid.Column="0" Content="Имя сотрудника:" Foreground="White" VerticalAlignment="Center" Margin="0,5"/>
         <TextBox x:Name="EmployeeNameTextBox" Grid.Row="0" Grid.Column="1" Margin="5"/>
 
-        <!-- Описание заявки -->
         <Label Grid.Row="1" Grid.Column="0" Content="Описание заявки:" Foreground="White" VerticalAlignment="Top" Margin="0,5"/>
         <TextBox x:Name="DescriptionTextBox" Grid.Row="1" Grid.Column="1" Margin="5" Height="100" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
 
-        <!-- Кнопки -->
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
             <Button x:Name="AddButton" Content="Добавить" Width="100" Margin="5" Click="AddButton_Click"/>
             <Button x:Name="CancelButton" Content="Отмена" Width="100" Margin="5" Click="CancelButton_Click"/>
