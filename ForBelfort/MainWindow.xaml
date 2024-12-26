@@ -1,0 +1,43 @@
+﻿<Window x:Class="ForBelfort.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Рассмотрение заявок" Height="450" Width="800" Background="#D3D3D3">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Margin="0,0,556,13" RenderTransformOrigin="0.506,0.243">
+            <MenuItem Header="Настройки">
+                <MenuItem Header="Изменить фон" Click="ChangeBackground_Click"/>
+            </MenuItem>
+            <MenuItem Header="Контактная информация" Click="ContactInfo_Click"/>
+            <MenuItem Header="Помощь" Click="OpenRickroll_Click"/>
+        </Menu>
+        <TextBlock Text="Рассмотрение заявок" FontSize="24" FontWeight="Bold" Foreground="#333" HorizontalAlignment="Center" Margin="0,0,0,59"/>
+
+
+        <DataGrid x:Name="ApplicationsDataGrid" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10,83,10,10" Background="White" Foreground="#333" RowBackground="#F9F9F9" AlternatingRowBackground="#EFEFEF" BorderBrush="#999" BorderThickness="1" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Заявки" Binding="{Binding ApplicationID}" Width="100"/>
+                <DataGridTextColumn Header="Имя пользователя" Binding="{Binding UserName}" Width="200"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding StatusName}" Width="150"/>
+                <DataGridTextColumn Header="Дата подачи" Binding="{Binding SubmissionDate}" Width="150"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="ApproveButton" Content="Одобрить" Width="100" Margin="5" Background="#4CAF50" Foreground="White" FontWeight="Bold" Click="ApproveButton_Click"/>
+            <Button x:Name="RejectButton" Content="Отклонить" Width="100" Margin="5" Background="#F44336" Foreground="White" FontWeight="Bold" Click="RejectButton_Click"/>
+            <Button x:Name="AddApplicationButton" Content="Добавить заявку" Width="150" Margin="5" Background="#FF9800" Foreground="White" FontWeight="Bold" Click="AddApplicationButton_Click"/>
+            <Button x:Name="LogoutButton" Content="Выход" Width="100" Margin="5" Background="#2196F3" Foreground="White" FontWeight="Bold" Click="LogoutButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
